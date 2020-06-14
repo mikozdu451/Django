@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	{% if title %}
-		<title>Blog - {{title}}</title>
-	{% else %}
-		<title>Blog - Home</title>
-	{% endif %}
-</head>
-<body>
+{% extends "blog\base.html" %}
+{% block content %}
+
 	<h1>Blog - Home</h1>
-	<a href="http://127.0.0.1:8000/about/">About</a>
 	{% for post in posts %}
 		<h2>{{ post.title }}</h2>
 		<p>By {{post.author}} posted on {{post.date}}</p>
 		<p>{{post.content}}</p>
 		<br/>
 	{% endfor %}
-</body>
-</html>
+
+{% endblock content%}
